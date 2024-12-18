@@ -12,8 +12,8 @@ streamDuration: 10 # 视频最大时长（单位秒）
 streamCompatibility: false # 兼容模式，NCQQ不用开，其他ICQQ、LLO需要开启
 
 biliSessData: '' # 哔哩哔哩的SESSDATA
-biliIntroLenLimit: 50 # 哔哩哔哩简介长度限制，填 0 或者 -1 可以不做任何限制，显示完整简介
-biliDuration: 480 # 哔哩哔哩限制的最大视频时长（默认8分钟），单位：秒
+biliIntroLenLimit: -1 # 哔哩哔哩简介长度限制，填 0 或者 -1 可以不做任何限制，显示完整简介
+biliDuration: 360 # 哔哩哔哩限制的最大视频时长（默认8分钟），单位：秒
 biliDisplayCover: true # 是否显示哔哩哔哩的封面
 biliDisplayInfo: true # 是否显示哔哩哔哩的视频信息
 biliDisplayIntro: true # 是否显示哔哩哔哩的简介
