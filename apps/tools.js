@@ -457,8 +457,8 @@ export class tools extends plugin {
                     // 封面
                     const dyCover = cover.url_list?.pop();
                     // logger.info(cover.url_list);
-                    dySendContent += `\n
-                    ${ DIVIDING_LINE.replace('{}', '限制说明') }\n当前视频时长约：${ (dyDuration / 60).toFixed(2).replace(/\.00$/, '') } 分钟，\n大于管理员设置的最大时长 ${ (durationThreshold / 60).toFixed(2).replace(/\.00$/, '') } 分钟！`;
+                    //dySendContent += `\n
+                    //${ DIVIDING_LINE.replace('{}', '限制说明') }\n当前视频时长约：${ (dyDuration / 60).toFixed(2).replace(/\.00$/, '') } 分钟，\n大于管理员设置的最大时长 ${ (durationThreshold / 60).toFixed(2).replace(/\.00$/, '') } 分钟！`;
                     e.reply([segment.image(dyCover), dySendContent]);
                     // 如果开启评论的就调用
                     await this.douyinComment(e, douId, headers);
@@ -837,8 +837,8 @@ export class tools extends plugin {
         }
         // 限制视频解析
         if (isLimitDuration) {
-            const durationInMinutes = (curDuration / 60).toFixed(0);
-            biliInfo.push(`${ DIVIDING_LINE.replace('{}', '限制说明') }\n当前视频时长约：${ durationInMinutes }分钟，\n大于管理员设置的最大时长 ${ (this.biliDuration / 60).toFixed(2).replace(/\.00$/, '') } 分钟！`);
+            //const durationInMinutes = (curDuration / 60).toFixed(0);
+            //biliInfo.push(`${ DIVIDING_LINE.replace('{}', '限制说明') }\n当前视频时长约：${ durationInMinutes }分钟，\n大于管理员设置的最大时长 ${ (this.biliDuration / 60).toFixed(2).replace(/\.00$/, '') } 分钟！`);
             e.reply(biliInfo);
             return true;
         } else {
@@ -913,7 +913,8 @@ export class tools extends plugin {
         if (this.biliDisplayIntro) {
             // 过滤简介中的一些链接
             const filteredDesc = await filterBiliDescLink(desc);
-            combineContent += `\n📝 简介：${ truncateString(filteredDesc, this.toolsConfig.biliIntroLenLimit || BILI_DEFAULT_INTRO_LEN_LIMIT) }`;
+            combineContent += `\n📝 简介：${ filteredDesc }`;
+            //combineContent += `\n📝 简介：${ truncateString(filteredDesc, this.toolsConfig.biliIntroLenLimit || BILI_DEFAULT_INTRO_LEN_LIMIT) }`;
         }
         // 是否显示在线人数
         if (this.biliDisplayOnline) {
