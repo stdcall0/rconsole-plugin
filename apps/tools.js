@@ -913,8 +913,7 @@ export class tools extends plugin {
         if (this.biliDisplayIntro) {
             // 过滤简介中的一些链接
             const filteredDesc = await filterBiliDescLink(desc);
-            combineContent += `\n📝 简介：${ filteredDesc }`;
-            //combineContent += `\n📝 简介：${ truncateString(filteredDesc, this.toolsConfig.biliIntroLenLimit || BILI_DEFAULT_INTRO_LEN_LIMIT) }`;
+            combineContent += `\n📝 简介：${ truncateString(filteredDesc, 300) }`;
         }
         // 是否显示在线人数
         if (this.biliDisplayOnline) {
